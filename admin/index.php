@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 	$result=mysqli_query($db, $loginquery);
 	$row=mysqli_fetch_array($result);
 	
-	                        if(is_array($row))
+	                        if(!empty($row))
 								{
                                     	$_SESSION["adm_id"] = $row['adm_id'];
 										header("refresh:1;url=dashboard.php");
